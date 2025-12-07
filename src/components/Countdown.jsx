@@ -55,7 +55,7 @@ export default function Countdown() {
           {items.map((it) => (
             <div
               key={it.key}
-              className="flex flex-col items-center bg-white/5 backdrop-blur-sm border border-white/6 rounded-xl p-4 shadow-md transition-transform transform hover:-translate-y-1"
+              className="flex flex-col items-center bg-gray-800 backdrop-blur-sm border border-white/6 rounded-xl p-4 shadow-md transition-transform transform hover:-translate-y-1"
             >
               <div
                 className="bg-linear-to-br from-white/5 to-white/3 w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center text-2xl sm:text-3xl font-serif font-semibold text-white drop-shadow"

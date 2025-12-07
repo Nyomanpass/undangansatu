@@ -17,7 +17,7 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-gray-900 text-gray-100 antialiased">
+    <div className="bg-black text-gray-100 antialiased">
       {!isOpen ? (
         <Opening onOpen={() => setIsOpen(true)} />
       ) : (
