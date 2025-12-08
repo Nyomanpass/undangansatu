@@ -26,7 +26,7 @@ export default function Countdown() {
       const pad = (n) => String(n).padStart(2, "0");
 
       setTimeLeft({
-        days: String(d).padStart(2, "0"),
+        days: pad(d),
         hours: pad(h),
         minutes: pad(m),
         seconds: pad(s),
@@ -46,32 +46,72 @@ export default function Countdown() {
   ];
 
   return (
-    <section className="py-8" data-aos="fade-up">
-      <div className="max-w-2xl mx-auto text-center">
-        <h3 className="text-2xl sm:text-3xl font-serif mb-4">Hitung Mundur</h3>
-        <p className="text-sm text-gray-400 mb-6">Menuju hari bahagia kami</p>
+    <section className="py-10 bg-black">
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {items.map((it) => (
-            <div
-              key={it.key}
-              className="flex flex-col items-center bg-gray-800 backdrop-blur-sm border border-white/6 rounded-xl p-4 shadow-md transition-transform transform hover:-translate-y-1"
-            >
-              <div
-                className="bg-linear-to-br from-white/5 to-white/3 w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center text-2xl sm:text-3xl font-serif font-semibold text-white drop-shadow"
-                aria-live="polite"
-                aria-atomic="true"
-              >
-                {timeLeft[it.key]}
-              </div>
-              <div className="mt-3 text-xs uppercase text-gray-300">{it.label}</div>
+        <header
+      className="relative h-[30vh] bg-cover bg-center flex items-end justify-center"
+      style={{ backgroundImage: "url('src/assets/images/herosatu.png')" }} // ganti path sesuai
+    >
+      <div className="absolute inset-0 bg-black/50"></div>
+{/* 
+      <div
+        className="relative z-10 text-center px-6 mb-36"
+        data-aos="fade-up"
+        data-aos-duration="1200"
+        data-aos-delay="200"
+      >
+        <p className="text-sm text-gray-300 mb-2 animate-fadeInDown">Om Swastyastu</p>
+        <h1 className="text-4xl sm:text-5xl font-serif tracking-wide mb-2 animate-fadeInUp">
+          Agung & Putri
+        </h1>
+        <p className="mt-3 text-lg text-gray-200 animate-fadeInUp" style={{ animationDelay: "0.4s" }}>
+          29 Desember 2025 • Bali
+        </p>
+      </div> */}
+
+    </header>
+
+      {/* JUDUL */}
+      <div className="text-center mb-8" data-aos="fade-up">
+        <h2 className="text-3xl px-5 font-serif italic text-white">
+          Menuju Hari Bahagia
+        </h2>
+      </div>
+
+      {/* BOX COUNTDOWN */}
+      <div
+        className="max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 px-6"
+        data-aos="zoom-in"
+      >
+        {items.map((it) => (
+          <div
+            key={it.key}
+            className="border border-gray-300 rounded-2xl bg-white py-4 px-2 flex flex-col items-center shadow-sm"
+          >
+            <div className="text-4xl font-semibold text-gray-800 font-serif">
+              {timeLeft[it.key]}
             </div>
-          ))}
-        </div>
+            <div className="text-sm text-gray-700 mt-1 font-serif italic">
+              {it.label}
+            </div>
+          </div>
+        ))}
+      </div>
 
-        <div className="mt-6 text-xs text-gray-500">
-          <span className="italic">Catatan:</span> Waktu ditampilkan dalam zona waktu perangkat Anda.
-        </div>
+      {/* DOA */}
+      <div className="max-w-2xl mx-auto text-center mt-10 px-6 font-serif italic text-gray-300 leading-relaxed">
+        <p className="mb-4">
+          " Om Ihaiva stam ma vi yustham, Visnam ayur vyasnutam, Kridantau
+          putrair naptrbhih, Modamanan sve ghre "
+        </p>
+        <p className="mb-6">(Reg Weda X.85.42)</p>
+        <p>
+          Ya Tuhanku Yang Maha Pengasih,  
+          Anugerahkanlah Kepada Pasangan Ini Senantiasa Berbahagia Keduanya Tidak
+          Terpisahkan, Panjang Umur, Semoga Pengantin Ini Dianugerahkan Putra –
+          Putri Dan Cucu Yang Memberikan Penghiburan, Tinggal Di Rumah Yang
+          Penuh Kebahagiaan.
+        </p>
       </div>
     </section>
   );

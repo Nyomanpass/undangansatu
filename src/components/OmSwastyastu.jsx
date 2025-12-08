@@ -2,7 +2,7 @@ import React from "react";
 
 export default function OmSwastyastu() {
   return (
-    <section id="omswastyastu" className="py-8 text-center" data-aos="fade-up">
+    <section id="omswastyastu" className="pb-5 pt-28 text-center px-6" data-aos="fade-up">
       <p className="text-sm text-gray-300">Om Swastyastu • Salam Sejahtera</p>
       <h2 className="text-2xl sm:text-3xl font-serif mt-3">
         Dengan hormat kami mengundang

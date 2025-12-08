@@ -15,10 +15,10 @@ export default function Opening({ onOpen }) {
       className={`min-h-screen flex items-center justify-center bg-cover bg-center relative transition-transform duration-700 ${
         slideOut ? "animate-slideOutDown" : ""
       }`}
-      style={{ backgroundImage: "url('src/assets/images/8.jpg')" }} // ganti path jika perlu
+      style={{ backgroundImage: "url('src/assets/images/hero.jpg')" }} // ganti path jika perlu
       data-aos="zoom-in"
     >
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-black/20" />
 
       <div className="relative z-10 text-center px-6 py-12 max-w-lg text-gray-100">
         <p className="text-sm text-gray-300 tracking-widest mb-2">OM SWASTYASTU</p>

@@ -7,7 +7,7 @@ import OmSwastyastu from "./components/OmSwastyastu";
 import WeddingStory from "./components/WeddingStory";
 import EventDetails from "./components/EventDetails";
 import LocationMap from "./components/LocationMap";
-import Gallery from "./components/Gallery";
+import Gallery from "./components/GallerySection";
 import Gifts from "./components/Gifts";
 import WishesForm from "./components/WishesForm";
 import Footer from "./components/Footer";
@@ -24,14 +24,13 @@ function App() {
         <>
           <MusicPlayer isOpen={isOpen} />
           <Hero />
-          <main className="max-w-3xl mx-auto px-6">
+          <main className="max-w-3xl mx-auto ">
             <OmSwastyastu />
             <Mempelai />
             <WeddingStory />
             <EventDetails />
             <Countdown />
             <LocationMap />
-            <Gifts />
             <Gallery />
             <WishesForm />
           </main>

@@ -13,7 +13,7 @@ export default function WishesForm() {
   }
 
   return (
-    <section className="py-8" data-aos="fade-up">
+    <section className="py-8 px-6" data-aos="fade-up">
       <h4 className="text-center text-2xl font-serif mb-4">Ucapan dan Doa</h4>
       <form onSubmit={submit} className="max-w-xl mx-auto space-y-3">
         <input value={name} onChange={e=>setName(e.target.value)} placeholder="Nama" className="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700"/>

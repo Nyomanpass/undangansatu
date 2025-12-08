@@ -2,12 +2,14 @@ import React from "react";
 
 export default function LocationMap() {
   return (
-    <section id="location" className="py-8" data-aos="fade-up">
-      <h4 className="text-center text-2xl sm:text-3xl font-serif mb-4">Lokasi Acara</h4>
+    <section id="location" className="py-10 px-6" data-aos="fade-up">
+      <h4 className="text-center text-3xl sm:text-4xl font-serif mb-6 tracking-wide">
+        Lokasi Acara
+      </h4>
 
-      <div className="bg-gray-800 rounded-lg overflow-hidden shadow">
+      <div className="bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-xl max-w-2xl mx-auto">
+        {/* MAP */}
         <div className="aspect-video">
-          {/* ganti src iframe atau image sesuai */}
           <iframe
             title="map"
             className="w-full h-full border-0"
@@ -16,22 +18,25 @@ export default function LocationMap() {
           />
         </div>
 
-        <div className="p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        {/* TEXT & BUTTON */}
+        <div className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h5 className="font-semibold">Gedung / Tempat Pernikahan</h5>
-            <p className="text-sm text-gray-400">Alamat lengkap, Kecamatan, Kota</p>
+            <h5 className="font-semibold text-white text-lg">
+              Gedung / Tempat Pernikahan
+            </h5>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Alamat lengkap, Kecamatan, Kota
+            </p>
           </div>
 
-          <div className="flex gap-2">
-            <a
-              href="https://www.google.com/maps?q=Bali"
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 bg-white text-gray-900 rounded"
-            >
-              Buka di Maps
-            </a>
-          </div>
+          <a
+            href="https://www.google.com/maps?q=Bali"
+            target="_blank"
+            rel="noreferrer"
+            className="px-5 py-2 bg-white text-gray-900 font-medium rounded-full shadow hover:bg-gray-200 transition"
+          >
+            Buka di Maps
+          </a>
         </div>
       </div>
     </section>
