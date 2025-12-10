@@ -9,7 +9,7 @@ export default function Countdown() {
   });
 
   useEffect(() => {
-    const target = new Date("2026-01-14T00:00:00").getTime();
+    const target = new Date("2025-12-29T14:00:00").getTime();
 
     const tick = () => {
       const now = Date.now();

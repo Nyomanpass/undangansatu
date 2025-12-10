@@ -23,7 +23,7 @@ export default function EventDetails() {
             Hari / Tanggal
           </h5>
           <p className="text-lg text-gray-300">
-            Jumat, 8 Oktober 2021
+            Senin, 29 Desember 2025
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function EventDetails() {
             Pukul :
           </h5>
           <p className="text-lg text-gray-300">
-            15.00 WITA – Selesai
+            14.00 WITA – Selesai
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function EventDetails() {
             Alamat :
           </h5>
           <p className="text-lg text-gray-300">
-            Manukaya, Tampaksiring, Gianyar
+            Br. Mekar Sari, Pujungan, Pupuan,Tabanan
           </p>
         </div>
       </div>

@@ -12,17 +12,33 @@ export default function Opening({ onOpen }) {
 
   return (
     <div
-      className={`min-h-screen flex items-end justify-center bg-cover bg-center relative transition-transform duration-700 ${
+      className={`h-screen flex items-end justify-center bg-cover bg-center relative transition-transform duration-700 overflow-hidden ${
         slideOut ? "animate-slideOutDown" : ""
       }`}
       style={{ backgroundImage: "url('src/assets/images/hero.jpg')" }} // ganti path jika perlu
       data-aos="zoom-in"
     >
+      {/* Ornamen pojok kanan atas */}
+        <img
+          src="src/assets/images/Border_Kanan_Atas.png"
+          alt="Ornamen Kanan Atas"
+          className="absolute top-0 right-0 w-42 sm:w-40 pointer-events-none select-none"
+          style={{ zIndex: 10, transform: "translateY(-20px) translateX(20px)" }} // sedikit ke kanan
+        />
+        {/* Ornamen pojok kiri bawah */}
+      <img
+        src="src/assets/images/Border_Kiri_Bawah.png"
+        alt="Ornamen Kiri Bawah"
+        className="absolute bottom-0 left-0 w-42 sm:w-40 pointer-events-none select-none"
+        style={{ zIndex: 10, transform: "translateY(15px) translateX(-20px)" }}
+      />
+
       <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative z-10 text-center px-6 py-12 max-w-lg text-gray-100">
         <p className="text-sm font-bold text-gray-300 tracking-widest -mb-1">OM SWASTYASTU</p>
-        <img className="w-45 mx-auto mb-[400px]" src="/pawiwahan.png" alt="" />
+        {/* contoh: kurangi margin besar agar tidak overflow */}
+        <img className="w-36 max-w-[200px] mx-auto mb-6" src="/pawiwahan.png" alt="" />
       
         <p className="text-sm text-gray-300 uppercase mb-1">The Wedding of</p>
         <h1 className="text-4xl sm:text-5xl font-serif font-semibold leading-tight">

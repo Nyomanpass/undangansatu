@@ -19,7 +19,6 @@ export default function Hero() {
 
   return (
     <header className="relative h-screen flex items-end justify-center overflow-hidden">
-
       {/* Background Slideshow */}
       <div className="absolute inset-0">
         {images.map((img, i) => (
@@ -44,16 +43,35 @@ export default function Hero() {
         data-aos-duration="1200"
         data-aos-delay="200"
       >
-        <p className="text-sm text-gray-300 mb-2 animate-fadeInDown">Om Swastyastu</p>
+        <p className="text-sm text-gray-300 mb-2 animate-fadeInDown">
+          The Wedding
+        </p>
 
         <h1 className="text-7xl font-abuget tracking-wide mb-2 animate-fadeInUp">
-          Agung & Putri
+          Toing & Nia
         </h1>
 
-        <p className="mt-3 text-lg text-gray-200 animate-fadeInUp" style={{ animationDelay: "0.4s" }}>
+        <p
+          className="mt-3 text-lg text-gray-200 animate-fadeInUp"
+          style={{ animationDelay: "0.4s" }}
+        >
           29 Desember 2025 • Bali
         </p>
       </div>
+
+      {/* Ornamen Kiri & Kanan */}
+      <img
+        src="src/assets/images/Artboard_1.png"
+        alt="Ornamen Kiri"
+        className="absolute right-50 bottom-17 sm:bottom-20 w-76 sm:w-76 pointer-events-none select-none"
+        style={{ zIndex: 11 }}
+      />
+      <img
+        src="src/assets/images/Artboard_2.png"
+        alt="Ornamen Kanan"
+        className="absolute left-50 bottom-16 sm:bottom-20 w-76 sm:w-76 pointer-events-none select-none"
+        style={{ zIndex: 11 }}
+      />
     </header>
   );
 }
