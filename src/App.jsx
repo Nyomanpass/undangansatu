@@ -38,8 +38,8 @@ function App() {
             <EventDetails />
             <Countdown />
             <LocationMap />
-            
             <Gallery />
+            <Gifts />
             <WishesForm />
           </main>
           <Footer />

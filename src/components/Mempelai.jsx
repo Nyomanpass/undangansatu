@@ -38,7 +38,7 @@ export default function Mempelai() {
             Ni Luh Gede Nia Amanda Putri
           </h3>
           <p className="text-sm text-gray-300 mt-2 max-w-xs mx-auto">
-            Putri pertama dari pasangan Bapak I Nyoman Mester dengan Ibu Ni Nyoman Reniat.
+            Putri pertama dari pasangan Bapak I Nyoman Mester dengan Ibu Ni Nyoman Reniati.
           </p>
         </div>
       </div>

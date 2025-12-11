@@ -17,42 +17,48 @@ export default function Opening({ onOpen }) {
 
   return (
     <div
-      className={`h-screen flex items-end justify-center bg-cover bg-center relative transition-transform duration-700 overflow-hidden ${
+      className={`h-screen flex flex-col justify-between bg-cover bg-center relative transition-transform duration-700 overflow-hidden ${
         slideOut ? "animate-slideOutDown" : ""
       }`}
       style={{ backgroundImage: `url(${bgHero})` }}
       data-aos="zoom-in"
     >
-      {/* Ornamen pojok kanan atas */}
+      {/* Ornamen Kanan Atas */}
       <img
         src={borderAtas}
-        alt="Ornamen Kanan Atas"
+        alt="Border Atas"
         className="absolute top-0 right-0 w-42 sm:w-40 pointer-events-none select-none"
         style={{ zIndex: 10, transform: "translateY(-20px) translateX(20px)" }}
       />
 
-      {/* Ornamen pojok kiri bawah */}
+      {/* Ornamen Kiri Bawah */}
       <img
         src={borderBawah}
-        alt="Ornamen Kiri Bawah"
+        alt="Border Bawah"
         className="absolute bottom-0 left-0 w-42 sm:w-40 pointer-events-none select-none"
         style={{ zIndex: 10, transform: "translateY(15px) translateX(-20px)" }}
       />
 
       <div className="absolute inset-0 bg-black/30" />
 
-      <div className="relative z-10 text-center px-6 py-12 max-w-lg text-gray-100">
-        <p className="text-sm font-bold text-gray-300 tracking-widest -mb-1">
+      {/* =================== BAGIAN ATAS =================== */}
+      <div className="relative z-10 text-center px-6 pt-20 text-gray-100">
+        <p className="text-sm font-bold text-gray-300 tracking-widest">
           OM SWASTYASTU
         </p>
 
         <img
-          className="w-36 max-w-[200px] mx-auto mb-[400px]"
-          src="/pawiwahan.png" // ini boleh di public
+          className="w-36 max-w-[200px] mx-auto"
+          src="/pawiwahan.png"
           alt="Pawiwahan"
         />
+      </div>
 
-        <p className="text-sm text-gray-300 uppercase mb-1">The Wedding of</p>
+      {/* =================== BAGIAN BAWAH =================== */}
+      <div className="relative z-10 text-center px-6 pb-12 text-gray-100">
+        <p className="text-sm text-gray-300 uppercase">
+          The Wedding of
+        </p>
 
         <h1 className="text-6xl font-abuget leading-tight">
           Toing & Nia
@@ -60,7 +66,7 @@ export default function Opening({ onOpen }) {
 
         <p className="text-lg text-gray-300">Senin, 29 Desember 2025</p>
 
-        <div className="mt-2">
+        <div className="mt-4">
           <p className="text-sm text-gray-300">Kepada Yth</p>
           <h3 className="mt-1 text-xl font-medium">Tamu Undangan</h3>
         </div>
@@ -70,7 +76,6 @@ export default function Opening({ onOpen }) {
             type="button"
             onClick={handleOpen}
             className="px-6 py-2 rounded-full bg-white text-gray-900 font-medium shadow-lg hover:scale-105 transform transition flex items-center gap-2"
-            aria-label="Buka undangan"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -84,6 +89,7 @@ export default function Opening({ onOpen }) {
           </button>
         </div>
       </div>
+      {/* =================== END BAGIAN BAWAH =================== */}
     </div>
   );
 }

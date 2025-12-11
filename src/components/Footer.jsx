@@ -10,9 +10,9 @@ export default function Footer({
   couple = "Toing & Nia",
   creditTitle = "Visual",
   creditName = "Paras Visual",
-  wa = "628123456789",
-  email = "email@example.com",
-  ig = "parasvisual",
+  wa = "085141038442",
+  email = "parasproduction1324@gmail.com",
+  ig = "parasvisual_",
 }) {
   return (
     <footer className="bg-gray-900 text-white font-sans">

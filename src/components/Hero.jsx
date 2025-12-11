@@ -36,6 +36,9 @@ export default function Hero() {
             }}
           ></div>
         ))}
+
+        {/* OVERLAY GRADIENT HITAM */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
       </div>
 
       {/* Overlay */}
@@ -49,7 +52,7 @@ export default function Hero() {
         data-aos-delay="200"
       >
         <p className="text-sm text-gray-300 mb-2 animate-fadeInDown">
-          The Wedding
+          The Wedding Off
         </p>
 
         <h1 className="text-6xl font-abuget tracking-wide mb-2 animate-fadeInUp">
