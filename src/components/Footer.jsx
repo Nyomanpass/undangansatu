@@ -14,7 +14,7 @@ export default function Footer({
 }) {
   return (
     <footer className="bg-gray-900 text-white font-sans">
-      <div className="max-w-md mx-auto">
+      <div className=" mx-auto">
 
         {/* Hero Footer Image */}
         <div

@@ -49,7 +49,7 @@ export default function Countdown() {
     <section className="py-10">
 
         <header
-      className="relative h-[30vh] bg-cover bg-center flex items-end justify-center"
+      className="relative md:h-[60vh] h-[30vh] bg-cover bg-center flex items-end justify-center"
       style={{ backgroundImage: "url('src/assets/images/herosatu.png')" }} // ganti path sesuai
     >
       <div className="absolute inset-0 bg-black/50"></div>

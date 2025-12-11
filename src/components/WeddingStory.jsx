@@ -9,7 +9,7 @@ const steps = [
 export default function WeddingStory() {
   return (
         <header
-      className="relative h-[30vh] bg-cover bg-center flex items-end justify-center"
+      className="relative md:h-[60vh] h-[30vh] bg-cover bg-center flex items-end justify-center"
       style={{ backgroundImage: "url('src/assets/images/headerbaawah.jpg')" }} // ganti path sesuai
     >
       <div className="absolute inset-0 bg-black/30"></div>

@@ -70,7 +70,7 @@ const GallerySection = ({ ACCENT_COLOR }) => {
     const prev = (e) => { e.stopPropagation(); setOpenIndex((i) => (i - 1 + galleryData.length) % galleryData.length); };
 
     return (
-      <section id="galeri" className="w-full md:max-w-md mx-auto text-white py-16">
+      <section id="galeri" className="w-full md:max-w-5xl mx-auto text-white py-16">
       
       {/* --- Header Galeri: MOMENT Bahagia --- */}
       <div className="text-center mb-10 pt-4 pb-8" data-aos="fade-up">
@@ -88,7 +88,7 @@ const GallerySection = ({ ACCENT_COLOR }) => {
       </div>
 
       {/* --- Grid Foto 2 Kolom --- */}
-      <div className="grid grid-cols-2 gap-3 px-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 px-6">
         {galleryData.map((photo, idx) => (
           <div
             key={photo.id}
