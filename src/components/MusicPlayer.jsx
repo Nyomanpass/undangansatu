@@ -24,7 +24,7 @@ export default function MusicPlayer({ isOpen }) {
     <>
       <audio
         ref={audioRef}
-        src="/src/assets/music.mp3"
+        src="/music.mp3"
         loop
       />
       <button
