@@ -1,9 +1,8 @@
 import React from "react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-
-import heroImg from "src/assets/images/hero.jpg";
-import logoImg from "src/assets/images/logoundangan.jpg";
+import heroImg from "../assets/images/hero.jpg";
+import logoImg from "../assets/images/logoundangan.jpg";
 
 export default function Footer({
   image = heroImg,
