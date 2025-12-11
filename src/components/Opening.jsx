@@ -38,13 +38,13 @@ export default function Opening({ onOpen }) {
       <div className="relative z-10 text-center px-6 py-12 max-w-lg text-gray-100">
         <p className="text-sm font-bold text-gray-300 tracking-widest -mb-1">OM SWASTYASTU</p>
         {/* contoh: kurangi margin besar agar tidak overflow */}
-        <img className="w-36 max-w-[200px] mx-auto mb-6" src="/pawiwahan.png" alt="" />
+        <img className="w-36 max-w-[200px] mx-auto mb-[400px]" src="/pawiwahan.png" alt="" />
       
         <p className="text-sm text-gray-300 uppercase mb-1">The Wedding of</p>
         <h1 className="text-4xl sm:text-5xl font-serif font-semibold leading-tight">
-          Aris & Saras
+          Toing & Nia
         </h1>
-        <p className="text-lg text-gray-300">Senin, 14 April 2025</p>
+        <p className="text-lg text-gray-300">Senin, 29 Desember 2025</p>
         <div className="mt-2">
           <p className="text-sm text-gray-300">Kepada Yth</p>
           <h3 className="mt-1 text-xl font-medium">Tamu Undangan</h3>

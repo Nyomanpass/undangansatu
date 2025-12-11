@@ -47,7 +47,7 @@ export default function Hero() {
           The Wedding
         </p>
 
-        <h1 className="text-7xl font-abuget tracking-wide mb-2 animate-fadeInUp">
+        <h1 className="text-6xl font-abuget tracking-wide mb-2 animate-fadeInUp">
           Toing & Nia
         </h1>
 
@@ -63,13 +63,13 @@ export default function Hero() {
       <img
         src="src/assets/images/Artboard_1.png"
         alt="Ornamen Kiri"
-        className="absolute right-50 bottom-17 sm:bottom-20 w-76 sm:w-76 pointer-events-none select-none"
+        className="absolute right-50 opacity-80 bottom-17 sm:bottom-20 w-72 sm:w-76 pointer-events-none select-none"
         style={{ zIndex: 11 }}
       />
       <img
         src="src/assets/images/Artboard_2.png"
         alt="Ornamen Kanan"
-        className="absolute left-50 bottom-16 sm:bottom-20 w-76 sm:w-76 pointer-events-none select-none"
+        className="absolute left-50 bottom-16 opacity-80 sm:bottom-20 w-72 sm:w-76 pointer-events-none select-none"
         style={{ zIndex: 11 }}
       />
     </header>

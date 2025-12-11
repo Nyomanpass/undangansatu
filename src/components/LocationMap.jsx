@@ -25,7 +25,7 @@ export default function LocationMap() {
         </div>
 
         {/* TEXT & BUTTON */}
-        <div className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="p-6 flex mx-auto flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <h5 className="font-semibold text-white text-lg">
               Gedung / Tempat Pernikahan

@@ -36,7 +36,23 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Photograph";
+  src: url("./assets/font/Photograph.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Paul";
+  src: url("./assets/font/Paul.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @theme {
   --font-abuget: "Abuget", sans-serif;
+  --font-photograph: "Photograph", sans-serif;
+  --font-paul: "Paul", sans-serif;
 }

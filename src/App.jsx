@@ -31,14 +31,14 @@ function App() {
         <>
           <MusicPlayer isOpen={isOpen} />
           <Hero />
-          <main className="max-w-3xl mx-auto ">
+          <main className="max-w-8xl mx-auto ">
             <OmSwastyastu />
             <Mempelai />
             <WeddingStory />
             <EventDetails />
             <Countdown />
             <LocationMap />
-            <Gifts/>
+            
             <Gallery />
             <WishesForm />
           </main>

@@ -10,9 +10,9 @@ export default function WeddingStory() {
   return (
         <header
       className="relative h-[30vh] bg-cover bg-center flex items-end justify-center"
-      style={{ backgroundImage: "url('src/assets/images/hero.jpg')" }} // ganti path sesuai
+      style={{ backgroundImage: "url('src/assets/images/headerbaawah.jpg')" }} // ganti path sesuai
     >
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
 {/* 
       <div
         className="relative z-10 text-center px-6 mb-36"

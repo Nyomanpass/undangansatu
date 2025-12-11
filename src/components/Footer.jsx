@@ -1,41 +1,93 @@
 import React from "react";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function Footer({
   image = "src/assets/images/hero.jpg",
   logo = "src/assets/images/logoundangan.jpg",
   couple = "Toing & Nia",
   creditTitle = "Visual",
-  creditName = "BomboraStudio",
+  creditName = "Paras Visual",
+  wa = "628123456789",
+  email = "email@example.com",
+  ig = "parasvisual",
 }) {
   return (
-    <footer className="bg-white text-gray-900">
+    <footer className="bg-gray-900 text-white font-sans">
       <div className="max-w-md mx-auto">
-          <div
-            className="relative w-full bg-center bg-cover h-[60vh] sm:h-[70vh] flex items-end"
-            style={{ backgroundImage: `url(${image})` }}
-            aria-hidden="true"
-          >
-            <div className="absolute inset-0 bg-black/60"></div>
 
-            <div className="relative z-10 w-full text-center pb-8 px-4">
-              <div className="text-white">
-                <div className="text-5xl sm:text-6xl font-abuget leading-tight mb-2">{couple.replace("&", " & ")}</div>
-              </div>
+        {/* Hero Footer Image */}
+        <div
+          className="relative w-full h-[55vh] sm:h-[70vh] bg-cover bg-center flex items-end justify-center"
+          style={{ backgroundImage: `url(${image})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+          <div className="relative z-10 pb-10 px-4 text-center">
+            <h1 className="text-5xl sm:text-6xl font-abuget text-white tracking-wide drop-shadow-lg">
+              {couple.replace("&", " & ")}
+            </h1>
+          </div>
+        </div>
+
+        {/* Dark Section */}
+        <div className="bg-gray-900 pt-10 pb-14 px-6 text-center">
+
+          {/* Logo */}
+          <div className="flex justify-center mb-6">
+            <div className="w-28 h-28 rounded-full bg-white shadow flex items-center justify-center overflow-hidden">
+              <img
+                src={logo}
+                alt="Logo"
+                className="w-24 h-24 object-contain"
+              />
             </div>
           </div>
 
-          {/* White block below with logo and credits */}
-        <div className="bg-white border-t border-gray-200 -mt-2 pt-6 pb-8 px-6 text-center">
-          <div className="mx-auto w-42 h-42 bg-white flex items-center justify-center mb-4 ">
-            <img src={logo} alt="Logo" className="w-64 h-auto" />
+          {/* Credits */}
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-wider text-gray-300">
+              {creditTitle}
+            </p>
+            <p className="text-base font-semibold mt-1 text-white">
+              {creditName}
+            </p>
           </div>
 
-          <div className="text-xs text-gray-600">{creditTitle}</div>
-          <div className="font-medium text-sm mt-1">{creditName}</div>
+          {/* Contact Info */}
+          <div className="mt-8 space-y-3 text-sm">
 
-          <div className="mt-6 text-xs text-gray-500">
-            © {new Date().getFullYear()} {couple.replace("&", " & ")}. Semua hak cipta.
+            {/* WhatsApp */}
+            <a
+              href={`https://wa.me/${wa}`}
+              target="_blank"
+              className="flex items-center justify-center gap-2 text-gray-300 hover:text-white transition"
+            >
+              <FaWhatsapp size={18} /> {wa}
+            </a>
+
+            {/* Email */}
+            <a
+              href={`mailto:${email}`}
+              className="flex items-center justify-center gap-2 text-gray-300 hover:text-white transition"
+            >
+              <MdEmail size={18} /> {email}
+            </a>
+
+            {/* Instagram */}
+            <a
+              href={`https://instagram.com/${ig}`}
+              target="_blank"
+              className="flex items-center justify-center gap-2 text-gray-300 hover:text-white transition"
+            >
+              <FaInstagram size={18} /> @{ig}
+            </a>
           </div>
+
+          {/* Copyright */}
+          <p className="mt-10 text-xs text-gray-400 tracking-wide">
+            © {new Date().getFullYear()} {couple.replace("&", " & ")} • All Rights Reserved
+          </p>
         </div>
       </div>
     </footer>
