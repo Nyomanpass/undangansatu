@@ -1,6 +1,9 @@
 import React from "react";
 
 export default function LocationMap() {
+  const address = 'M2GH R87 SMP Negeri 6 Pupuan Satu Atap, Gg Nakula, Br. Mekarsari Pujungan, Pujungan, Pupuan, Tabanan Bali 82163';
+  const encodedAddress = encodeURIComponent(address);
+
   return (
     <section id="location" className="py-10 px-6" data-aos="fade-up">
       <h4 className="text-center text-3xl sm:text-4xl font-serif mb-6 tracking-wide">
@@ -10,11 +13,14 @@ export default function LocationMap() {
       <div className="bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-xl max-w-2xl mx-auto">
         {/* MAP */}
         <div className="aspect-video">
+          {/* Gunakan output=embed agar iframe tidak diblokir */}
           <iframe
             title="map"
             className="w-full h-full border-0"
-            src="https://www.google.com/maps?q=M2GH+R87+SMP+Negeri+6+Pupuan+Satu+Atap,+Gg+Nakula,+Br.+Mekarsari+Pujungan+Unnamed+Road,+Pujungan,+Kec.+Pupuan,+Kabupaten+Tabanan,+Bali+82163&ftid=0x2dd1873730f6ed41:0x755e9e59e0f7039f&entry=gps&lucs=,94275415,94284505,94224825,94227247,94227248,94231188,94280568,47071704,94218641,94282134,94203019,94286869&g_ep=CAISEjI1LjQ3LjAuODMzNTQyOTMwMBgAIIgnKmwsOTQyNzU0MTUsOTQyODQ1MDUsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsOTQyMDMwMTksOTQyODY4NjlCAklE&skid=d36f0d80-aa68-40ae-8f55-d020dd0c71e0&g_st=ipc"
+            src={`https://maps.google.com/maps?q=${encodedAddress}&z=17&output=embed`}
             allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
 
@@ -30,9 +36,9 @@ export default function LocationMap() {
           </div>
 
           <a
-            href="https://maps.app.goo.gl/hQFr2HZcTBx5M8M68?g_st=ipc"
+            href={`https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}&travelmode=driving`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="px-5 py-2 bg-white text-gray-900 font-medium rounded-full shadow hover:bg-gray-200 transition flex items-center gap-2"
           >
             {/* New Location Icon (SVG) */}
