@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import heroSatu from "../assets/images/herosatu.png"; // IMPORT GAMBAR
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
@@ -48,28 +49,13 @@ export default function Countdown() {
   return (
     <section className="py-10">
 
-        <header
-      className="relative md:h-[60vh] h-[30vh] bg-cover bg-center flex items-end justify-center"
-      style={{ backgroundImage: "url('src/assets/images/herosatu.png')" }} // ganti path sesuai
-    >
-      <div className="absolute inset-0 bg-black/50"></div>
-{/* 
-      <div
-        className="relative z-10 text-center px-6 mb-36"
-        data-aos="fade-up"
-        data-aos-duration="1200"
-        data-aos-delay="200"
+      {/* HEADER BACKGROUND FIX */}
+      <header
+        className="relative md:h-[60vh] h-[30vh] bg-cover bg-center flex items-end justify-center"
+        style={{ backgroundImage: `url(${heroSatu})` }}
       >
-        <p className="text-sm text-gray-300 mb-2 animate-fadeInDown">Om Swastyastu</p>
-        <h1 className="text-4xl sm:text-5xl font-serif tracking-wide mb-2 animate-fadeInUp">
-          Agung & Putri
-        </h1>
-        <p className="mt-3 text-lg text-gray-200 animate-fadeInUp" style={{ animationDelay: "0.4s" }}>
-          29 Desember 2025 • Bali
-        </p>
-      </div> */}
-
-    </header>
+        <div className="absolute inset-0 bg-black/50"></div>
+      </header>
 
       {/* JUDUL */}
       <div className="text-center mb-8" data-aos="fade-up">

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+// IMPORT GAMBAR
+import bgHero from "../assets/images/hero.jpg";
+import borderAtas from "../assets/images/Border_Kanan_Atas.png";
+import borderBawah from "../assets/images/Border_Kiri_Bawah.png";
+
 export default function Opening({ onOpen }) {
   const [slideOut, setSlideOut] = useState(false);
 
@@ -7,7 +12,7 @@ export default function Opening({ onOpen }) {
     setSlideOut(true);
     setTimeout(() => {
       onOpen && onOpen();
-    }, 700); // durasi animasi
+    }, 700);
   };
 
   return (
@@ -15,19 +20,20 @@ export default function Opening({ onOpen }) {
       className={`h-screen flex items-end justify-center bg-cover bg-center relative transition-transform duration-700 overflow-hidden ${
         slideOut ? "animate-slideOutDown" : ""
       }`}
-      style={{ backgroundImage: "url('src/assets/images/hero.jpg')" }} // ganti path jika perlu
+      style={{ backgroundImage: `url(${bgHero})` }}
       data-aos="zoom-in"
     >
       {/* Ornamen pojok kanan atas */}
-        <img
-          src="src/assets/images/Border_Kanan_Atas.png"
-          alt="Ornamen Kanan Atas"
-          className="absolute top-0 right-0 w-42 sm:w-40 pointer-events-none select-none"
-          style={{ zIndex: 10, transform: "translateY(-20px) translateX(20px)" }} // sedikit ke kanan
-        />
-        {/* Ornamen pojok kiri bawah */}
       <img
-        src="src/assets/images/Border_Kiri_Bawah.png"
+        src={borderAtas}
+        alt="Ornamen Kanan Atas"
+        className="absolute top-0 right-0 w-42 sm:w-40 pointer-events-none select-none"
+        style={{ zIndex: 10, transform: "translateY(-20px) translateX(20px)" }}
+      />
+
+      {/* Ornamen pojok kiri bawah */}
+      <img
+        src={borderBawah}
         alt="Ornamen Kiri Bawah"
         className="absolute bottom-0 left-0 w-42 sm:w-40 pointer-events-none select-none"
         style={{ zIndex: 10, transform: "translateY(15px) translateX(-20px)" }}
@@ -36,19 +42,29 @@ export default function Opening({ onOpen }) {
       <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative z-10 text-center px-6 py-12 max-w-lg text-gray-100">
-        <p className="text-sm font-bold text-gray-300 tracking-widest -mb-1">OM SWASTYASTU</p>
-        {/* contoh: kurangi margin besar agar tidak overflow */}
-        <img className="w-36 max-w-[200px] mx-auto mb-[400px]" src="/pawiwahan.png" alt="" />
-      
+        <p className="text-sm font-bold text-gray-300 tracking-widest -mb-1">
+          OM SWASTYASTU
+        </p>
+
+        <img
+          className="w-36 max-w-[200px] mx-auto mb-[400px]"
+          src="/pawiwahan.png" // ini boleh di public
+          alt="Pawiwahan"
+        />
+
         <p className="text-sm text-gray-300 uppercase mb-1">The Wedding of</p>
-        <h1 className="text-4xl sm:text-5xl font-serif font-semibold leading-tight">
+
+        <h1 className="text-6xl font-abuget leading-tight">
           Toing & Nia
         </h1>
+
         <p className="text-lg text-gray-300">Senin, 29 Desember 2025</p>
+
         <div className="mt-2">
           <p className="text-sm text-gray-300">Kepada Yth</p>
           <h3 className="mt-1 text-xl font-medium">Tamu Undangan</h3>
         </div>
+
         <div className="mt-8 flex justify-center">
           <button
             type="button"
@@ -57,18 +73,17 @@ export default function Opening({ onOpen }) {
             aria-label="Buka undangan"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
             </svg>
             Buka Undangan
           </button>
         </div>
-       
       </div>
     </div>
   );
 }
-
-// Tambahkan di src/index.css atau App.css:
-/*
-
-*/

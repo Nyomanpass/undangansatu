@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
 
+// IMPORT GAMBAR SLIDESHOW
+import img1 from "../assets/images/galerry2.png";
+import img2 from "../assets/images/hero.jpg";
+import img3 from "../assets/images/herotiga.png";
+
+// IMPORT ORNAMEN
+import ornLeft from "../assets/images/Artboard_1.png";
+import ornRight from "../assets/images/Artboard_2.png";
+
 export default function Hero() {
-  const images = [
-    "src/assets/images/galerry2.png",
-    "src/assets/images/hero.jpg",
-    "src/assets/images/herotiga.png",
-  ];
+  const images = [img1, img2, img3];
 
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 4000); // 4 detik
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, []);
 
   return (
     <header className="relative h-screen flex items-end justify-center overflow-hidden">
@@ -24,7 +29,7 @@ export default function Hero() {
         {images.map((img, i) => (
           <div
             key={i}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000`}
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
             style={{
               backgroundImage: `url(${img})`,
               opacity: index === i ? 1 : 0,
@@ -33,10 +38,10 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Overlay Gelap */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/30"></div>
 
-      {/* Isi Konten */}
+      {/* Konten */}
       <div
         className="relative z-10 text-center px-6 mb-36"
         data-aos="fade-up"
@@ -59,15 +64,17 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Ornamen Kiri & Kanan */}
+      {/* Ornamen Kiri */}
       <img
-        src="src/assets/images/Artboard_1.png"
+        src={ornLeft}
         alt="Ornamen Kiri"
         className="absolute right-50 opacity-80 bottom-17 sm:bottom-20 w-72 sm:w-76 pointer-events-none select-none"
         style={{ zIndex: 11 }}
       />
+
+      {/* Ornamen Kanan */}
       <img
-        src="src/assets/images/Artboard_2.png"
+        src={ornRight}
         alt="Ornamen Kanan"
         className="absolute left-50 bottom-16 opacity-80 sm:bottom-20 w-72 sm:w-76 pointer-events-none select-none"
         style={{ zIndex: 11 }}
