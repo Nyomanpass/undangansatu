@@ -1,12 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react"; // Tambahkan useEffect
 
 // IMPORT GAMBAR
 import bgHero from "../assets/images/hero.jpg";
 import borderAtas from "../assets/images/Border_Kanan_Atas.png";
 import borderBawah from "../assets/images/Border_Kiri_Bawah.png";
 
+// Fungsi untuk mendapatkan nama tamu dari query parameter 'to'
+const getRecipientName = () => {
+  // Mengambil query string dari URL (misal: ?to=pastika)
+  const params = new URLSearchParams(window.location.search);
+  
+  // Mengambil nilai dari parameter 'to'
+  const name = params.get('to');
+  
+  if (name) {
+    // 1. Ganti underscore atau strip dengan spasi
+    const formattedName = name.replace(/_|-/g, ' '); 
+    
+    // 2. Mengubah huruf pertama setiap kata menjadi kapital (Camel Case)
+    return formattedName
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }
+  
+  // Nilai default jika parameter 'to' tidak ditemukan
+  return "Tamu Undangan"; 
+};
+
 export default function Opening({ onOpen }) {
   const [slideOut, setSlideOut] = useState(false);
+  // State baru untuk menyimpan nama tamu yang akan ditampilkan
+  const [recipientName, setRecipientName] = useState("Tamu Undangan"); 
+
+  useEffect(() => {
+    // Jalankan sekali saat komponen dimuat untuk mengambil nama dari URL
+    setRecipientName(getRecipientName());
+  }, []); // Dependency array kosong agar hanya berjalan saat mount
 
   const handleOpen = () => {
     setSlideOut(true);
@@ -23,7 +54,7 @@ export default function Opening({ onOpen }) {
       style={{ backgroundImage: `url(${bgHero})` }}
       data-aos="zoom-in"
     >
-      {/* Ornamen Kanan Atas */}
+      {/* Ornamen Kanan Atas (TIDAK BERUBAH) */}
       <img
         src={borderAtas}
         alt="Border Atas"
@@ -31,7 +62,7 @@ export default function Opening({ onOpen }) {
         style={{ zIndex: 10, transform: "translateY(-20px) translateX(20px)" }}
       />
 
-      {/* Ornamen Kiri Bawah */}
+      {/* Ornamen Kiri Bawah (TIDAK BERUBAH) */}
       <img
         src={borderBawah}
         alt="Border Bawah"
@@ -41,7 +72,7 @@ export default function Opening({ onOpen }) {
 
       <div className="absolute inset-0 bg-black/30" />
 
-      {/* =================== BAGIAN ATAS =================== */}
+      {/* =================== BAGIAN ATAS (TIDAK BERUBAH) =================== */}
       <div className="relative z-10 text-center px-6 pt-20 text-gray-100">
         <p className="text-sm font-bold text-gray-300 tracking-widest">
           OM SWASTYASTU
@@ -54,7 +85,7 @@ export default function Opening({ onOpen }) {
         />
       </div>
 
-      {/* =================== BAGIAN BAWAH =================== */}
+      {/* =================== BAGIAN BAWAH (MODIFIKASI NAMA TAMU) =================== */}
       <div className="relative z-10 text-center px-6 pb-12 text-gray-100">
         <p className="text-sm text-gray-300 uppercase">
           The Wedding of
@@ -68,7 +99,8 @@ export default function Opening({ onOpen }) {
 
         <div className="mt-4">
           <p className="text-sm text-gray-300">Kepada Yth</p>
-          <h3 className="mt-1 text-xl font-medium">Tamu Undangan</h3>
+          {/* MENGGANTI NAMA STATIS DENGAN STATE */}
+          <h3 className="mt-1 text-xl font-medium">{recipientName}</h3> 
         </div>
 
         <div className="mt-8 flex justify-center">
