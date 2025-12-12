@@ -1,6 +1,6 @@
 import React from "react";
-import imgPria from "../assets/images/Mempelai_Pria_1.png";
-import imgWanita from "../assets/images/Mempelai_Wanita_1.png";
+import imgPria from "../assets/images/Mempelai_Pria_1.webp";
+import imgWanita from "../assets/images/Mempelai_Wanita_1.webp";
 
 export default function Mempelai() {
   return (

@@ -5,7 +5,7 @@ export default function Gifts() {
 
   const account = {
     bank: "BCA",
-    number: "1234 5678 9012",
+    number: "7680781235",
   };
 
   const copy = async (text) => {

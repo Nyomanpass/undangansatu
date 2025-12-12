@@ -155,148 +155,185 @@ export default function WishesForm() {
   const tidakHadirCount = comments.filter((c) => c.attendance === "tidak-hadir").length;
 
   return (
-    <section className="py-8 px-6">
-      <div className="max-w-xl mx-auto">
-        <h4 className="text-center text-2xl font-serif mb-4 text-gray-100">
-          Ucapan dan Doa
-        </h4>
+  <section className="py-8 px-6">
+  <div className="max-w-xl mx-auto">
+    <h4 className="text-center text-2xl font-serif mb-4 text-gray-100">
+      Ucapan dan Doa
+    </h4>
 
-        {/* FORM */}
-        <div className="bg-black/30 border border-white/10 p-6 rounded-xl">
-          <div className="text-center mb-4 text-gray-200">
-            {hadirCount} Hadir • {tidakHadirCount} Tidak Hadir • {comments.length} Comments
+    {/* STATE PAGINATION */}
+    {(() => {
+      const [currentPage, setCurrentPage] = useState(1);
+      const commentsPerPage = 3;
+
+      // Hitung pagination
+      const indexOfLast = currentPage * commentsPerPage;
+      const indexOfFirst = indexOfLast - commentsPerPage;
+      var currentComments = comments.slice(indexOfFirst, indexOfLast);
+      var totalPages = Math.ceil(comments.length / commentsPerPage);
+
+      // Return section with pagination-enabled data
+      return (
+        <>
+          {/* FORM */}
+          <div className="bg-black/30 border border-white/10 p-6 rounded-xl">
+            <div className="text-center mb-4 text-gray-200">
+              {hadirCount} Hadir • {tidakHadirCount} Tidak Hadir • {comments.length} Comments
+            </div>
+
+            <form onSubmit={submit}>
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Nama"
+                className="w-full px-3 py-2 bg-gray-800/70 border border-white/10 text-white rounded mb-2"
+              />
+
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Doa & Ucapan"
+                className="w-full px-3 py-2 bg-gray-800/70 border border-white/10 text-white rounded mb-2 h-24"
+              />
+
+              <select
+                value={attendance}
+                onChange={(e) => setAttendance(e.target.value)}
+                className="w-full px-3 py-2 bg-gray-800/70 border border-white/10 text-white rounded mb-4"
+              >
+                <option value="hadir">Hadir</option>
+                <option value="tidak-hadir">Tidak Hadir</option>
+              </select>
+
+              <button
+                type="submit"
+                className="w-full py-2 bg-white rounded text-gray-900 font-medium"
+              >
+                {submitting ? "Mengirim…" : "Kirim"}
+              </button>
+            </form>
           </div>
 
-          <form onSubmit={submit}>
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Nama"
-              className="w-full px-3 py-2 bg-gray-800/70 border border-white/10 text-white rounded mb-2"
-            />
-
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Doa & Ucapan"
-              className="w-full px-3 py-2 bg-gray-800/70 border border-white/10 text-white rounded mb-2 h-24"
-            />
-
-            <select
-              value={attendance}
-              onChange={(e) => setAttendance(e.target.value)}
-              className="w-full px-3 py-2 bg-gray-800/70 border border-white/10 text-white rounded mb-4"
-            >
-              <option value="hadir">Hadir</option>
-              <option value="tidak-hadir">Tidak Hadir</option>
-            </select>
-
-            <button
-              type="submit"
-              className="w-full py-2 bg-white rounded text-gray-900 font-medium"
-            >
-              {submitting ? "Mengirim…" : "Kirim"}
-            </button>
-          </form>
-        </div>
-
-        {/* COMMENTS */}
-        <div className="mt-6 space-y-5">
-          {comments.map((c) => (
-            <div key={c.id} className="bg-black/70 border border-white/20 p-4 rounded-xl">
-              <div className="flex gap-3">
-                <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white">
-                  {c.name.charAt(0)}
-                </div>
-                <div className="flex-1 text-white">
-                  <div className="flex justify-between">
-                    <div>
-                      <div className="font-medium">{c.name}</div>
-                      <div className="text-xs text-gray-400">
-                        {c.createdAt ? timeAgo(c.createdAt) : ""}
-                      </div>
-                    </div>
-                    <span
-                      className={`px-2 py-1 rounded text-xs ${
-                        c.attendance === "hadir" ? "bg-green-600" : "bg-red-600"
-                      }`}
-                    >
-                      {c.attendance === "hadir" ? "Hadir" : "Tidak Hadir"}
-                    </span>
+          {/* COMMENTS */}
+          <div className="mt-6 space-y-5">
+            {currentComments.map((c) => (
+              <div key={c.id} className="bg-black/70 border border-white/20 p-4 rounded-xl">
+                <div className="flex gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white">
+                    {c.name.charAt(0)}
                   </div>
-
-                  <p className="mt-2">{c.message}</p>
-
-                  <button
-                    className="text-green-400 text-sm mt-2"
-                    onClick={() =>
-                      setReplyOpen((s) => ({ ...s, [c.id]: !s[c.id] }))
-                    }
-                  >
-                    Reply
-                  </button>
-
-                  {/* Reply Form */}
-                  {replyOpen[c.id] && (
-                    <form
-                      onSubmit={(e) => submitReply(e, c.id, c.replies)}
-                      className="mt-3 space-y-2"
-                    >
-                      <input
-                        value={replyName[c.id] || ""}
-                        onChange={(e) =>
-                          setReplyName((s) => ({
-                            ...s,
-                            [c.id]: e.target.value,
-                          }))
-                        }
-                        placeholder="Nama"
-                        className="w-full bg-gray-700 text-white px-3 py-2 rounded"
-                      />
-
-                      <textarea
-                        value={replyMessage[c.id] || ""}
-                        onChange={(e) =>
-                          setReplyMessage((s) => ({
-                            ...s,
-                            [c.id]: e.target.value,
-                          }))
-                        }
-                        placeholder="Balasan"
-                        className="w-full bg-gray-700 text-white px-3 py-2 rounded"
-                      />
-
-                      <button
-                        type="submit"
-                        className="px-4 py-1 bg-white text-gray-900 rounded"
-                      >
-                        {replySubmitting[c.id] ? "Mengirim…" : "Kirim Balasan"}
-                      </button>
-                    </form>
-                  )}
-
-                  {/* Reply List */}
-                  {c.replies?.length > 0 && (
-                    <div className="mt-3 space-y-3">
-                      {c.replies.map((r) => (
-                        <div key={r.id} className="bg-white/10 p-2 rounded">
-                          <div className="text-sm font-medium text-white">
-                            {r.name}
-                          </div>
-                          <div className="text-xs text-gray-400">
-                            {timeAgo(r.createdAt)}
-                          </div>
-                          <p className="text-sm text-white mt-1">{r.message}</p>
+                  <div className="flex-1 text-white">
+                    <div className="flex justify-between">
+                      <div>
+                        <div className="font-medium">{c.name}</div>
+                        <div className="text-xs text-gray-400">
+                          {c.createdAt ? timeAgo(c.createdAt) : ""}
                         </div>
-                      ))}
+                      </div>
+                      <span
+                        className={`px-2 py-1 rounded text-xs ${
+                          c.attendance === "hadir" ? "bg-green-600" : "bg-red-600"
+                        }`}
+                      >
+                        {c.attendance === "hadir" ? "Hadir" : "Tidak Hadir"}
+                      </span>
                     </div>
-                  )}
+
+                    <p className="mt-2">{c.message}</p>
+
+                    <button
+                      className="text-green-400 text-sm mt-2"
+                      onClick={() =>
+                        setReplyOpen((s) => ({ ...s, [c.id]: !s[c.id] }))
+                      }
+                    >
+                      Reply
+                    </button>
+
+                    {/* Reply Form */}
+                    {replyOpen[c.id] && (
+                      <form
+                        onSubmit={(e) => submitReply(e, c.id, c.replies)}
+                        className="mt-3 space-y-2"
+                      >
+                        <input
+                          value={replyName[c.id] || ""}
+                          onChange={(e) =>
+                            setReplyName((s) => ({
+                              ...s,
+                              [c.id]: e.target.value,
+                            }))
+                          }
+                          placeholder="Nama"
+                          className="w-full bg-gray-700 text-white px-3 py-2 rounded"
+                        />
+
+                        <textarea
+                          value={replyMessage[c.id] || ""}
+                          onChange={(e) =>
+                            setReplyMessage((s) => ({
+                              ...s,
+                              [c.id]: e.target.value,
+                            }))
+                          }
+                          placeholder="Balasan"
+                          className="w-full bg-gray-700 text-white px-3 py-2 rounded"
+                        />
+
+                        <button
+                          type="submit"
+                          className="px-4 py-1 bg-white text-gray-900 rounded"
+                        >
+                          {replySubmitting[c.id] ? "Mengirim…" : "Kirim Balasan"}
+                        </button>
+                      </form>
+                    )}
+
+                    {/* Reply List */}
+                    {c.replies?.length > 0 && (
+                      <div className="mt-3 space-y-3">
+                        {c.replies.map((r) => (
+                          <div key={r.id} className="bg-white/10 p-2 rounded">
+                            <div className="text-sm font-medium text-white">
+                              {r.name}
+                            </div>
+                            <div className="text-xs text-gray-400">
+                              {timeAgo(r.createdAt)}
+                            </div>
+                            <p className="text-sm text-white mt-1">{r.message}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* PAGINATION */}
+          {totalPages > 1 && (
+            <div className="flex justify-center mt-6 gap-2">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i + 1)}
+                  className={`px-3 py-1 rounded ${
+                    currentPage === i + 1
+                      ? "bg-white text-gray-900"
+                      : "bg-gray-700 text-white"
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          )}
+        </>
+      );
+    })()}
+  </div>
+</section>
+
   );
 }

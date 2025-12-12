@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 // IMPORT GAMBAR SLIDESHOW
-import img1 from "../assets/images/galerry2.png";
+import img1 from "../assets/images/galerry2.webp";
 import img2 from "../assets/images/hero.jpg";
-import img3 from "../assets/images/herotiga.png";
+import img3 from "../assets/images/herotiga.webp";
 
 // IMPORT ORNAMEN
 import ornLeft from "../assets/images/Artboard_1.png";

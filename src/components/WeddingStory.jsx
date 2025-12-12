@@ -1,5 +1,5 @@
 import React from "react";
-import headerBawah from "../assets/images/headerbaawah.jpg"; // Import gambar
+import headerBawah from "../assets/images/headerbaawah.webp"; // Import gambar
 
 const steps = [
   { title: "Pertemuan", text: "Kami bertemu pertama kali di sebuah acara keluarga." },

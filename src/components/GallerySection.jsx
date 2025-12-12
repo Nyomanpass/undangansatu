@@ -30,20 +30,20 @@ const GalleryItem = ({ src, alt, onOpen }) => (
 
 // --- Data Galeri Mockup (Tetap sama) ---
 const galleryData = [
-    { id: 1, src: "/galerry1.png"},
-    { id: 2, src: "/galerry4.png"},
-    { id: 3, src: "/galerry7.png"},
-    { id: 4, src: "/galerry16.png"},
-    { id: 5, src: "/galerry9.png"},
-    { id: 6, src: "/galerry12.png"},
-    { id: 7, src: "/galerry14.png"},
-    { id: 8, src: "/galerry15.png"},
-    { id: 9, src: "/galerry3.png"},
-    { id: 10, src: "/galerry8.png"},
+    { id: 1, src: "/galerry1.jpg"},
+    { id: 2, src: "/galerry4.jpg"},
+    { id: 3, src: "/galerry7.jpg"},
+    { id: 4, src: "/galerry16.jpg"},
+    { id: 5, src: "/galerry9.jpg"},
+    { id: 6, src: "/galerry12.jpg"},
+    { id: 7, src: "/galerry14.jpg"},
+    { id: 8, src: "/galerry15.jpg"},
+    { id: 9, src: "/galerry3.jpg"},
+    { id: 10, src: "/galerry8.jpg"},
     { id: 11, src: "/galerry11.jpg"},
-    { id: 12, src: "/galerry17.png"},
-    { id: 14, src: "/galerry16.png"},
-    { id: 15, src: "/galerry14.png"}
+    { id: 12, src: "/galerry17.jpg"},
+    { id: 14, src: "/galerry16.jpg"},
+    { id: 15, src: "/galerry14.jpg"}
 ];
 
 // --- Komponen Utama Galeri ---

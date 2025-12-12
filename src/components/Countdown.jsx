@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import heroSatu from "../assets/images/herosatu.png"; // IMPORT GAMBAR
+import heroSatu from "../assets/images/herosatu.webp"; // IMPORT GAMBAR
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
