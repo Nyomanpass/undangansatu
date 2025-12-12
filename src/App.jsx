@@ -12,7 +12,9 @@ import Gifts from "./components/Gifts";
 import WishesForm from "./components/WishesForm";
 import Footer from "./components/Footer";
 import Countdown from "./components/Countdown";
+import GenerateLink from "./components/GenerateLink";
 import { useState } from "react";
+
 
 function WeddingPage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +56,10 @@ export default function App() {
       <Routes>
         {/* URL akan menjadi parasvisual.com/wedding */}
         <Route path="/wedding/toing&nia" element={<WeddingPage />} />
+        <Route path="/wedding/generate-link" element={<GenerateLink />} />  
       </Routes>
     </Router>
   );
 }
+
+
