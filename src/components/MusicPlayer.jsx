@@ -24,7 +24,7 @@ export default function MusicPlayer({ isOpen }) {
     <>
       <audio
         ref={audioRef}
-        src="/music.mp3"
+        src="/lagudua.mp3"
         loop
       />
       <button
