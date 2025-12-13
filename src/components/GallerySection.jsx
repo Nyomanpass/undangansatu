@@ -37,13 +37,19 @@ const galleryData = [
     { id: 5, src: "/galerry9.jpg"},
     { id: 6, src: "/galerry12.jpg"},
     { id: 7, src: "/galerry14.jpg"},
-    { id: 8, src: "/galerry15.jpg"},
+    { id: 8, src: "/galerry22.jpg"},
     { id: 9, src: "/galerry3.jpg"},
     { id: 10, src: "/galerry8.jpg"},
     { id: 11, src: "/galerry11.jpg"},
-    { id: 12, src: "/galerry17.jpg"},
-    { id: 14, src: "/galerry16.jpg"},
-    { id: 15, src: "/galerry14.jpg"}
+    { id: 12, src: "/galerry23.jpg"},
+    { id: 14, src: "/galerry19.jpg"},
+    { id: 15, src: "/galerry18.jpg"},
+    { id: 15, src: "/galerry17.jpg"},
+    { id: 15, src: "/galerry21.jpg"},
+    { id: 15, src: "/galerry20.jpg"},
+    { id: 15, src: "/galerry15.jpg"},
+    { id: 15, src: "/galerry24.jpg"},
+    { id: 15, src: "/galerry25.jpg"}
 ];
 
 // --- Komponen Utama Galeri ---
